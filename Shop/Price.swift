@@ -23,3 +23,13 @@ struct Price {
         self.currency = currency
     }
 }
+
+
+extension NumberFormatter {
+    
+    func string(from price: Price) -> String? {
+        self.numberStyle = .currencyAccounting
+        self.currencyCode = price.currency.rawValue
+        return string(from: price.amount)
+    }
+}

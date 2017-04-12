@@ -10,8 +10,7 @@ import UIKit
 
 class ShopTableViewController: UITableViewController {
     
-    private let products = [Product]()
-    
+    private let products = Product.availableProducts()
     private let currencyFormatter = NumberFormatter()
     
     override func viewDidLoad() {
@@ -22,6 +21,7 @@ class ShopTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,6 +52,7 @@ class ShopTableViewController: UITableViewController {
         let product = products[indexPath.row]
         
         productTableViewCell.nameLabel.text = product.name
+        productTableViewCell.priceLabel.text = currencyFormatter.productUnitPriceString(product: product)
         
         return productTableViewCell
     }
@@ -92,14 +93,19 @@ class ShopTableViewController: UITableViewController {
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
+        if let productDetailViewController = segue.destination as? ProductDetailViewController {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                productDetailViewController.product = products[indexPath.row]
+            }
+        }
      }
-     */
+    
     
 }
