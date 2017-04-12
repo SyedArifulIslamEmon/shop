@@ -24,6 +24,9 @@ class ProductDetailViewController: UIViewController {
         
         if let product = product {
             unitPriceLabel.text = currencyFormatter.productUnitPriceString(product: product)
+            
+            title = product.name
+            textView.text = product.description
         }
     }
 

@@ -52,7 +52,7 @@ class ShopTableViewController: UITableViewController {
         let product = products[indexPath.row]
         
         productTableViewCell.nameLabel.text = product.name
-        productTableViewCell.priceLabel.text = currencyFormatter.productUnitPriceString(product: product)
+        productTableViewCell.unitPriceLabel.text = currencyFormatter.productUnitPriceString(product: product)
         
         return productTableViewCell
     }
