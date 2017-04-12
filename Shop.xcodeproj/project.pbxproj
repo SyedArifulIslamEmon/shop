@@ -13,6 +13,11 @@
 		543AE90A1E9E527E000736D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543AE9081E9E527E000736D5 /* LaunchScreen.storyboard */; };
 		543AE9151E9E527E000736D5 /* ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543AE9141E9E527E000736D5 /* ShopTests.swift */; };
 		543AE9201E9E527E000736D5 /* ShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543AE91F1E9E527E000736D5 /* ShopUITests.swift */; };
+		54C381471E9E5AF400C2512F /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381461E9E5AF400C2512F /* ShopTableViewController.swift */; };
+		54C3814A1E9E5C2000C2512F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */; };
+		54C3814C1E9E608500C2512F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814B1E9E608500C2512F /* Product.swift */; };
+		54C3814E1E9E60C400C2512F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814D1E9E60C400C2512F /* Currency.swift */; };
+		54C381501E9E612300C2512F /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814F1E9E612300C2512F /* Price.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		543AE91B1E9E527E000736D5 /* ShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		543AE91F1E9E527E000736D5 /* ShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopUITests.swift; sourceTree = "<group>"; };
 		543AE9211E9E527E000736D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54C381461E9E5AF400C2512F /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
+		54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		54C3814B1E9E608500C2512F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		54C3814D1E9E60C400C2512F /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		54C3814F1E9E612300C2512F /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +105,9 @@
 		543AE8FE1E9E527E000736D5 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				54C381451E9E5A3600C2512F /* utilities */,
 				54C381441E9E5A2B00C2512F /* model */,
 				54C381431E9E5A2300C2512F /* view controllers */,
+				54C381451E9E5A3600C2512F /* utilities */,
 				543AE8FF1E9E527E000736D5 /* AppDelegate.swift */,
 				543AE9031E9E527E000736D5 /* Main.storyboard */,
 				543AE9061E9E527E000736D5 /* Assets.xcassets */,
@@ -128,6 +138,8 @@
 		54C381431E9E5A2300C2512F /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				54C381461E9E5AF400C2512F /* ShopTableViewController.swift */,
+				54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -135,6 +147,9 @@
 		54C381441E9E5A2B00C2512F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				54C3814B1E9E608500C2512F /* Product.swift */,
+				54C3814D1E9E60C400C2512F /* Currency.swift */,
+				54C3814F1E9E612300C2512F /* Price.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -281,6 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				543AE9001E9E527E000736D5 /* AppDelegate.swift in Sources */,
+				54C3814E1E9E60C400C2512F /* Currency.swift in Sources */,
+				54C3814C1E9E608500C2512F /* Product.swift in Sources */,
+				54C381471E9E5AF400C2512F /* ShopTableViewController.swift in Sources */,
+				54C3814A1E9E5C2000C2512F /* ProductTableViewCell.swift in Sources */,
+				54C381501E9E612300C2512F /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
