@@ -12,6 +12,8 @@ class ProductDetailViewController: UIViewController {
 
     @IBOutlet weak var unitPriceLabel: UILabel!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
     
     private let currencyFormatter = NumberFormatter()
 
@@ -23,11 +25,14 @@ class ProductDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         if let product = product {
-            unitPriceLabel.text = currencyFormatter.productUnitPriceString(product: product)
-            
             title = product.name
             textView.text = product.description
+            unitPriceLabel.text = currencyFormatter.productUnitPriceString(product: product)
+            let count = Cart.sharedInstance.countForProduct(product: product)
+            counterLabel.text = "\(count)"
+            stepper.value = Double(count)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +41,17 @@ class ProductDetailViewController: UIViewController {
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        if let product = product {
+            let value = Int(sender.value)
+            let count = Cart.sharedInstance.countForProduct(product: product)
+            if value > count {
+                Cart.sharedInstance.addProduct(product: product)
+            } else if value < count {
+                Cart.sharedInstance.removeProduct(product: product)
+            }
+            
+            counterLabel.text = "\(Cart.sharedInstance.countForProduct(product: product))"
+        }
     }
 
     /*

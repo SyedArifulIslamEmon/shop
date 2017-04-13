@@ -44,7 +44,9 @@ struct Colors {
         UITableView.appearance().separatorColor = DividerColor
         
         UILabel.appearance().textColor = PrimaryTextColor
-        UITextField.appearance().textColor = PrimaryColor
+        UITextField.appearance().textColor = PrimaryTextColor
+        
+        UIStepper.appearance().tintColor = PrimaryColor
     }
     
 }
