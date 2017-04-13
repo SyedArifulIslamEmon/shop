@@ -37,7 +37,6 @@ class ShopTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -49,7 +48,7 @@ class ShopTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let productTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as? ProductTableViewCell else {
-            assert(true, "Cell is not ProductTableViewCell")
+            assert(false, "Cell is not ProductTableViewCell")
             return UITableViewCell()
         }
         // Configure the cell...
