@@ -50,7 +50,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, 0.0, accuracy: 0.001)
 
         // try to remove a product
-        Cart.shared.remove(product: product1)
+        Cart.shared.remove(product1)
         XCTAssertEqual(Cart.shared.totalCount, 0)
         XCTAssertEqual(Cart.shared.productCount, 0)
         XCTAssertEqual(Cart.shared.count(for: product1), 0)
@@ -58,7 +58,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // add product1
-        Cart.shared.add(product: product1)
+        Cart.shared.add(product1)
         XCTAssertEqual(Cart.shared.totalCount, 1)
         XCTAssertEqual(Cart.shared.productCount, 1)
         XCTAssertEqual(Cart.shared.count(for: product1), 1)
@@ -66,7 +66,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // add product1
-        Cart.shared.add(product: product1)
+        Cart.shared.add(product1)
         XCTAssertEqual(Cart.shared.totalCount, 2)
         XCTAssertEqual(Cart.shared.productCount, 1)
         XCTAssertEqual(Cart.shared.count(for: product1), 2)
@@ -74,7 +74,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
        
         // add product2
-        Cart.shared.add(product: product2)
+        Cart.shared.add(product2)
         XCTAssertEqual(Cart.shared.totalCount, 3)
         XCTAssertEqual(Cart.shared.productCount, 2)
         XCTAssertEqual(Cart.shared.count(for: product1), 2)
@@ -82,7 +82,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product: product1)
+        Cart.shared.remove(product1)
         XCTAssertEqual(Cart.shared.totalCount, 2)
         XCTAssertEqual(Cart.shared.productCount, 2)
         XCTAssertEqual(Cart.shared.count(for: product1), 1)
@@ -90,7 +90,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product2
-        Cart.shared.remove(product: product2)
+        Cart.shared.remove(product2)
         XCTAssertEqual(Cart.shared.totalCount, 1)
         XCTAssertEqual(Cart.shared.productCount, 1)
         XCTAssertEqual(Cart.shared.count(for: product1), 1)
@@ -98,7 +98,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // remove product2
-        Cart.shared.remove(product: product2)
+        Cart.shared.remove(product2)
         XCTAssertEqual(Cart.shared.totalCount, 1)
         XCTAssertEqual(Cart.shared.productCount, 1)
         XCTAssertEqual(Cart.shared.count(for: product1), 1)
@@ -106,7 +106,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product: product1)
+        Cart.shared.remove(product1)
         XCTAssertEqual(Cart.shared.totalCount, 0)
         XCTAssertEqual(Cart.shared.productCount, 0)
         XCTAssertEqual(Cart.shared.count(for: product1), 0)
@@ -114,7 +114,7 @@ class ShopTests: XCTestCase {
         XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product: product1)
+        Cart.shared.remove(product1)
         XCTAssertEqual(Cart.shared.totalCount, 0)
         XCTAssertEqual(Cart.shared.productCount, 0)
         XCTAssertEqual(Cart.shared.count(for: product1), 0)

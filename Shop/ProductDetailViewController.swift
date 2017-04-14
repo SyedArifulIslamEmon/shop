@@ -45,9 +45,9 @@ class ProductDetailViewController: UIViewController {
             let value = Int(sender.value)
             let count = Cart.shared.count(for: product)
             if value > count {
-                Cart.shared.add(product: product)
+                Cart.shared.add(product)
             } else if value < count {
-                Cart.shared.remove(product: product)
+                Cart.shared.remove(product)
             }
             
             counterLabel.text = "\(Cart.shared.count(for: product))"

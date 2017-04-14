@@ -17,11 +17,11 @@ class Cart {
     private init() {
     }
     
-    func add(product: Product) {
+    func add(_ product: Product) {
         countedSet.add(product)
     }
     
-    func remove(product: Product) {
+    func remove(_ product: Product) {
         countedSet.remove(product)
     }
     
