@@ -10,24 +10,24 @@ import Foundation
 
 class Cart {
     
-    static let sharedInstance = Cart()
+    static let shared = Cart()
     
-    private var countedSet = NSCountedSet()
+    private var countedSet = CountedSet<Product>()
     
     private init() {
     }
     
-    func addProduct(product: Product) {
+    func add(product: Product) {
         countedSet.add(product)
     }
     
-    func removeProduct(product: Product) {
+    func remove(product: Product) {
         countedSet.remove(product)
     }
     
     var products : [Product] {
         get {
-            return countedSet.allObjects as? [Product] ?? [Product]()
+            return countedSet.allObjects
         }
     }
     
@@ -36,18 +36,30 @@ class Cart {
             return countedSet.count
         }
     }
-    
+
+    func count(for product: Product) -> Int {
+        return countedSet.count(for: product)
+    }
+
     var totalCount: Int {
         get {
-            var count = 0
+            var totalCount = 0
             for product in products {
-                count += countForProduct(product: product)
+                totalCount += count(for: product)
             }
-            return count
+            return totalCount
         }
     }
     
-    func countForProduct(product: Product) -> Int {
-        return countedSet.count(for: product)
+    var totalPrice : Price {
+        get {
+            var amount = NSDecimalNumber(string: "0")
+            for product in products {
+                let productCount = count(for: product)
+                amount = amount.adding(product.unitPrice.amount.multiplying(by: NSDecimalNumber(string: "\(productCount)")))
+            }
+            return Price(amount: amount, currency: .USD)
+        }
     }
+    
 }

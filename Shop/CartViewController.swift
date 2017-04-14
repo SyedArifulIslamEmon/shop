@@ -10,13 +10,14 @@ import UIKit
 
 class CartViewController: UIViewController, UITableViewDataSource {
 
-    private let products = Cart.sharedInstance.products
+    private let products = Cart.shared.products
     private let currencyFormatter = NumberFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        title = "Total: \(currencyFormatter.string(from: Cart.shared.totalPrice) ?? "0")"
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,7 +45,7 @@ class CartViewController: UIViewController, UITableViewDataSource {
         
         cell.textLabel?.text = product.name
         
-        let productCount = Cart.sharedInstance.countForProduct(product: product)
+        let productCount = Cart.shared.count(for: product)
         let priceAmount = product.unitPrice.amount.multiplying(by: NSDecimalNumber(string: "\(productCount)"))
         let price = Price(amount: priceAmount, currency: product.unitPrice.currency)
         cell.detailTextLabel?.text = "\(productCount) \(product.unit.rawValue)(s) = \(currencyFormatter.string(from: price) ?? "")"

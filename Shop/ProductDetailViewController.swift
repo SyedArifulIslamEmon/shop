@@ -28,7 +28,7 @@ class ProductDetailViewController: UIViewController {
             title = product.name
             textView.text = product.description
             unitPriceLabel.text = currencyFormatter.productUnitPriceString(product: product)
-            let count = Cart.sharedInstance.countForProduct(product: product)
+            let count = Cart.shared.count(for: product)
             counterLabel.text = "\(count)"
             stepper.value = Double(count)
         }
@@ -43,14 +43,14 @@ class ProductDetailViewController: UIViewController {
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         if let product = product {
             let value = Int(sender.value)
-            let count = Cart.sharedInstance.countForProduct(product: product)
+            let count = Cart.shared.count(for: product)
             if value > count {
-                Cart.sharedInstance.addProduct(product: product)
+                Cart.shared.add(product: product)
             } else if value < count {
-                Cart.sharedInstance.removeProduct(product: product)
+                Cart.shared.remove(product: product)
             }
             
-            counterLabel.text = "\(Cart.sharedInstance.countForProduct(product: product))"
+            counterLabel.text = "\(Cart.shared.count(for: product))"
         }
     }
 

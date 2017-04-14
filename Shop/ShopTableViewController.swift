@@ -26,7 +26,7 @@ class ShopTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.rightBarButtonItem?.isEnabled = Cart.sharedInstance.totalCount > 0
+        self.navigationItem.rightBarButtonItem?.isEnabled = Cart.shared.totalCount > 0
     }
     
     override func didReceiveMemoryWarning() {
