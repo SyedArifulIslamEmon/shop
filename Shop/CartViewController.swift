@@ -9,17 +9,18 @@
 import UIKit
 
 class CartViewController: UIViewController, UITableViewDataSource {
-
-    private let products = Cart.shared.products
+    
+    var cart : Cart?
     private let currencyFormatter = NumberFormatter()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        title = "Total: \(currencyFormatter.string(from: Cart.shared.totalPrice) ?? "0")"
+        let totalPrice = cart?.totalPrice ?? Price(amount: NSDecimalNumber.zero, currency: .USD)
+        title = "Total: \(currencyFormatter.string(from: totalPrice) ?? "0")"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -33,7 +34,7 @@ class CartViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return products.count
+        return cart?.products.count ?? 0
     }
     
     
@@ -41,26 +42,26 @@ class CartViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         // Configure the cell...
         
-        let product = products[indexPath.row]
-        
-        cell.textLabel?.text = product.name
-        
-        let productCount = Cart.shared.count(for: product)
-        let priceAmount = product.unitPrice.amount.multiplying(by: NSDecimalNumber(string: "\(productCount)"))
-        let price = Price(amount: priceAmount, currency: product.unitPrice.currency)
-        cell.detailTextLabel?.text = "\(productCount) \(product.unit.rawValue)(s) = \(currencyFormatter.string(from: price) ?? "")"
-        
+        if let product = cart?.products[indexPath.row] {
+            
+            cell.textLabel?.text = product.name
+            
+            let productCount = cart?.count(for: product) ?? 0
+            let priceAmount = product.unitPrice.amount.multiplying(by: NSDecimalNumber(string: "\(productCount)"))
+            let price = Price(amount: priceAmount, currency: product.unitPrice.currency)
+            cell.detailTextLabel?.text = "\(productCount) \(product.unit.rawValue)(s) = \(currencyFormatter.string(from: price) ?? "")"
+        }
         return cell
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

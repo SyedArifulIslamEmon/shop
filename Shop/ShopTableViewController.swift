@@ -8,10 +8,12 @@
 
 import UIKit
 
-class ShopTableViewController: UITableViewController {
+class ShopTableViewController: UITableViewController, ProductDetailDelegate {
     
     private let products = Product.availableProducts()
     private let currencyFormatter = NumberFormatter()
+    
+    let cart = Cart(currency: .USD)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ class ShopTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationItem.rightBarButtonItem?.isEnabled = Cart.shared.totalCount > 0
+        self.navigationItem.rightBarButtonItem?.isEnabled = cart.totalCount > 0
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,18 +100,35 @@ class ShopTableViewController: UITableViewController {
      */
     
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+    // MARK: - ProductDetailDelegate
+    
+    func count(for product: Product) -> Int {
+        return cart.count(for:product)
+    }
+    
+    func productDetailViewController(productDetailViewController: ProductDetailViewController, didAdd product: Product) {
+        cart.add(product)
+    }
+    
+    func productDetailViewController(productDetailViewController: ProductDetailViewController, didRemove product: Product) {
+        cart.remove(product)
+    }
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         if let productDetailViewController = segue.destination as? ProductDetailViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
+                productDetailViewController.delegate = self
                 productDetailViewController.product = products[indexPath.row]
             }
+        } else if let cartViewController = segue.destination as? CartViewController {
+            cartViewController.cart = cart
         }
-     }
+    }
     
     
 }

@@ -11,6 +11,8 @@ import XCTest
 
 class ShopTests: XCTestCase {
     
+    let cart = Cart(currency: .USD)
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -46,86 +48,86 @@ class ShopTests: XCTestCase {
         let accuracy = 0.001
         
         // cart should be empty
-        XCTAssertEqual(Cart.shared.totalCount, 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, 0.0, accuracy: 0.001)
+        XCTAssertEqual(cart.totalCount, 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, 0.0, accuracy: 0.001)
 
         // try to remove a product
-        Cart.shared.remove(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 0)
-        XCTAssertEqual(Cart.shared.productCount, 0)
-        XCTAssertEqual(Cart.shared.count(for: product1), 0)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product1)
+        XCTAssertEqual(cart.totalCount, 0)
+        XCTAssertEqual(cart.productCount, 0)
+        XCTAssertEqual(cart.count(for: product1), 0)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // add product1
-        Cart.shared.add(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 1)
-        XCTAssertEqual(Cart.shared.productCount, 1)
-        XCTAssertEqual(Cart.shared.count(for: product1), 1)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.add(product1)
+        XCTAssertEqual(cart.totalCount, 1)
+        XCTAssertEqual(cart.productCount, 1)
+        XCTAssertEqual(cart.count(for: product1), 1)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // add product1
-        Cart.shared.add(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 2)
-        XCTAssertEqual(Cart.shared.productCount, 1)
-        XCTAssertEqual(Cart.shared.count(for: product1), 2)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.add(product1)
+        XCTAssertEqual(cart.totalCount, 2)
+        XCTAssertEqual(cart.productCount, 1)
+        XCTAssertEqual(cart.count(for: product1), 2)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
        
         // add product2
-        Cart.shared.add(product2)
-        XCTAssertEqual(Cart.shared.totalCount, 3)
-        XCTAssertEqual(Cart.shared.productCount, 2)
-        XCTAssertEqual(Cart.shared.count(for: product1), 2)
-        XCTAssertEqual(Cart.shared.count(for: product2), 1)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.add(product2)
+        XCTAssertEqual(cart.totalCount, 3)
+        XCTAssertEqual(cart.productCount, 2)
+        XCTAssertEqual(cart.count(for: product1), 2)
+        XCTAssertEqual(cart.count(for: product2), 1)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 2)
-        XCTAssertEqual(Cart.shared.productCount, 2)
-        XCTAssertEqual(Cart.shared.count(for: product1), 1)
-        XCTAssertEqual(Cart.shared.count(for: product2), 1)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product1)
+        XCTAssertEqual(cart.totalCount, 2)
+        XCTAssertEqual(cart.productCount, 2)
+        XCTAssertEqual(cart.count(for: product1), 1)
+        XCTAssertEqual(cart.count(for: product2), 1)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product2
-        Cart.shared.remove(product2)
-        XCTAssertEqual(Cart.shared.totalCount, 1)
-        XCTAssertEqual(Cart.shared.productCount, 1)
-        XCTAssertEqual(Cart.shared.count(for: product1), 1)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product2)
+        XCTAssertEqual(cart.totalCount, 1)
+        XCTAssertEqual(cart.productCount, 1)
+        XCTAssertEqual(cart.count(for: product1), 1)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
         
         // remove product2
-        Cart.shared.remove(product2)
-        XCTAssertEqual(Cart.shared.totalCount, 1)
-        XCTAssertEqual(Cart.shared.productCount, 1)
-        XCTAssertEqual(Cart.shared.count(for: product1), 1)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product2)
+        XCTAssertEqual(cart.totalCount, 1)
+        XCTAssertEqual(cart.productCount, 1)
+        XCTAssertEqual(cart.count(for: product1), 1)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 0)
-        XCTAssertEqual(Cart.shared.productCount, 0)
-        XCTAssertEqual(Cart.shared.count(for: product1), 0)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product1)
+        XCTAssertEqual(cart.totalCount, 0)
+        XCTAssertEqual(cart.productCount, 0)
+        XCTAssertEqual(cart.count(for: product1), 0)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
 
         // remove product1
-        Cart.shared.remove(product1)
-        XCTAssertEqual(Cart.shared.totalCount, 0)
-        XCTAssertEqual(Cart.shared.productCount, 0)
-        XCTAssertEqual(Cart.shared.count(for: product1), 0)
-        XCTAssertEqual(Cart.shared.count(for: product2), 0)
-        XCTAssertEqualWithAccuracy(Cart.shared.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
+        cart.remove(product1)
+        XCTAssertEqual(cart.totalCount, 0)
+        XCTAssertEqual(cart.productCount, 0)
+        XCTAssertEqual(cart.count(for: product1), 0)
+        XCTAssertEqual(cart.count(for: product2), 0)
+        XCTAssertEqualWithAccuracy(cart.totalPrice.amount.doubleValue, totalPrice(products: products), accuracy: accuracy)
     }
     
     func totalPrice(products: [Product]) -> Double {
         var totalPrice = 0.0
         for product in products {
-            totalPrice += Double(Cart.shared.count(for: product)) * product.unitPrice.amount.doubleValue
+            totalPrice += Double(cart.count(for: product)) * product.unitPrice.amount.doubleValue
         }
         return totalPrice
     }

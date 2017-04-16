@@ -165,8 +165,6 @@
 				54C3814D1E9E60C400C2512F /* Currency.swift */,
 				54C3814F1E9E612300C2512F /* Price.swift */,
 				54C381511E9E670800C2512F /* Unit.swift */,
-				5469EB5B1E9FE73A00E13402 /* Cart.swift */,
-				54AD5F441EA09E83008B6643 /* CountedSet.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -174,6 +172,8 @@
 		54C381451E9E5A3600C2512F /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5469EB5B1E9FE73A00E13402 /* Cart.swift */,
+				54AD5F441EA09E83008B6643 /* CountedSet.swift */,
 				54C381531E9E687C00C2512F /* Colors.swift */,
 			);
 			name = utilities;

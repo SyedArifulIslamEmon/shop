@@ -10,15 +10,17 @@ import Foundation
 
 class Cart {
     
-    static let shared = Cart()
-    
     private var countedSet = CountedSet<Product>()
+    private let currency : Currency
     
-    private init() {
+    init(currency: Currency) {
+        self.currency = currency
     }
     
     func add(_ product: Product) {
-        countedSet.add(product)
+        if currency == product.unitPrice.currency {
+            countedSet.add(product)
+        }
     }
     
     func remove(_ product: Product) {
@@ -36,11 +38,11 @@ class Cart {
             return countedSet.count
         }
     }
-
+    
     func count(for product: Product) -> Int {
         return countedSet.count(for: product)
     }
-
+    
     var totalCount: Int {
         get {
             var totalCount = 0
@@ -58,7 +60,7 @@ class Cart {
                 let productCount = count(for: product)
                 amount = amount.adding(product.unitPrice.amount.multiplying(by: NSDecimalNumber(string: "\(productCount)")))
             }
-            return Price(amount: amount, currency: .USD)
+            return Price(amount: amount, currency: currency)
         }
     }
     
