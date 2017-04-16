@@ -63,7 +63,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Shop" id="6mA-HC-ruw">
-                        <barButtonItem key="rightBarButtonItem" image="cart_icon" style="plain" id="UsT-Dr-oeu">
+                        <barButtonItem key="rightBarButtonItem" image="cart_icon" id="UsT-Dr-oeu">
                             <connections>
                                 <segue destination="wDE-a7-rc6" kind="show" id="UsS-UX-gMh"/>
                             </connections>
@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="480.80000000000001" y="-27.436281859070466"/>
         </scene>
-        <!--Cart View Controller-->
+        <!--Cart-->
         <scene sceneID="EvV-gk-Uun">
             <objects>
                 <viewController id="wDE-a7-rc6" customClass="CartViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,10 +128,54 @@
                             <constraint firstItem="fCl-k8-oQA" firstAttribute="leading" secondItem="8Hm-32-T2U" secondAttribute="leading" id="kEZ-BX-7Z9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Cart" id="ni6-hB-ZYf">
+                        <barButtonItem key="rightBarButtonItem" image="exchange_icon" id="MOA-4P-tCh">
+                            <connections>
+                                <segue destination="uoh-5h-ifJ" kind="show" id="tJw-v8-2pT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkQ-qa-NTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1260" y="-320.68965517241384"/>
+        </scene>
+        <!--Exchange Table View Controller-->
+        <scene sceneID="SLp-T7-975">
+            <objects>
+                <tableViewController id="uoh-5h-ifJ" customClass="ExchangeTableViewController" customModule="Shop" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4gR-vK-mwV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="rhv-oV-BDW" style="IBUITableViewCellStyleDefault" id="dya-n2-u70">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dya-n2-u70" id="63V-zb-XY0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rhv-oV-BDW">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="uoh-5h-ifJ" id="Rz1-qD-j2k"/>
+                            <outlet property="delegate" destination="uoh-5h-ifJ" id="2XO-U5-dL7"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ziW-05-71C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2015" y="-321"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="wPe-GR-VCZ">
@@ -222,10 +266,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Agh-5G-OTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470" y="-27"/>
+            <point key="canvasLocation" x="-348" y="-27"/>
         </scene>
     </scenes>
     <resources>
         <image name="cart_icon" width="30" height="30"/>
+        <image name="exchange_icon" width="23" height="23"/>
     </resources>
 </document>
