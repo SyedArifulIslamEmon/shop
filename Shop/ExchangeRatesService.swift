@@ -15,7 +15,7 @@ class ExchangeRatesService {
     static let NO_RESPONSE_DATA_RECEIVED = -1
     static let NO_RATE_RECEIVED = -2
     
-    class func exchangeRates(fromSource currency: Currency, completion: @escaping (_ exchangeRates: ExchangeRates?, _ error: NSError?) -> Void) {
+    class func exchangeRates(fromSource currency: Currency, completion: @escaping (_ exchangeRates: ExchangeRates?, _ error: Error?) -> Void) {
         let urlString = "\(Constants.CURRENCY_LAYER_BASE_URL)/api/live?access_key=\(Constants.CURRENCY_LAYER_API_KEY)&source=\(currency.rawValue)"
         if let url = URL(string: urlString) {
             let _ = DataService.getData(from: url, completion: { (data, response, error) in

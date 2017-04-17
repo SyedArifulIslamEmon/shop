@@ -12,11 +12,11 @@ struct ExchangeRates {
     
     let source: Currency
     let quotes: [ExchangeRate]
-    
-//    init(source: Currency, quotes: [ExchangeRate]) {
-//        self.source = source
-//        self.quotes = quotes
-//    }
+    let timestamp: Int
+    //    init(source: Currency, quotes: [ExchangeRate]) {
+    //        self.source = source
+    //        self.quotes = quotes
+    //    }
     
     init? (dict: [String: AnyObject]) {
         
@@ -39,7 +39,7 @@ struct ExchangeRates {
             // remove source currency string
             // e.g. "USDEUR" -> "EUR"
             let currencyString = key.replacingOccurrences(of: source.rawValue, with: "")
-
+            
             // skip source currency
             guard !currencyString.isEmpty else {
                 continue
@@ -54,5 +54,12 @@ struct ExchangeRates {
         }
         
         self.quotes = quotes
+        
+        // timestamp
+        guard let timestamp = dict["timestamp"] as? Int else {
+            return nil
+        }
+        
+        self.timestamp = timestamp
     }
 }

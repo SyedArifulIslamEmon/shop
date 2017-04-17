@@ -16,9 +16,10 @@ class DataService {
      * @param completion: the completion block with the result, called on a background thread
      * @return NSURLSessionDataTask, to be able to cancel the network call
      */
-    class func getData(from url: URL, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: NSError?) -> Void) -> URLSessionDataTask? {
+    class func getData(from url: URL, completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?) -> Void) -> URLSessionDataTask? {
         
-        let dataTask = URLSession.shared.dataTask(with: url, completionHandler: completion as! (Data?, URLResponse?, Error?) -> Void)
+        let dataTask = URLSession.shared.dataTask(with: url, completionHandler: completion)
+        
         // start download
         dataTask.resume()
         

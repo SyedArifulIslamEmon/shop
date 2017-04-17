@@ -13,6 +13,7 @@ class ExchangeTableViewController: UITableViewController {
     var sourcePrice : Price?
     private var prices = [Price]()
     private let currencyFormatter = NumberFormatter()
+    let dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class ExchangeTableViewController: UITableViewController {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = Locale.current
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: #selector(ExchangeTableViewController.refresh), for: UIControlEvents.valueChanged)
@@ -47,13 +52,26 @@ class ExchangeTableViewController: UITableViewController {
                 if let error = error {
                     print(error)
                 } else if let exchangeRates = exchangeRates {
+                    self.prices.removeAll()
+                    
                     for exchangeRate in exchangeRates.quotes {
                         if let amount = self.sourcePrice?.amount.multiplying(by: NSDecimalNumber(string: "\(exchangeRate.rate)")) {
                             self.prices.append(Price(amount: amount, currency: exchangeRate.to))
                         }
                     }
+                    
+                    // order alphabetical by currency
+                    self.prices = self.prices.sorted(by: { $0.currency.rawValue < $1.currency.rawValue })
                 }
-                
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                    if let timeInterval = exchangeRates?.timestamp {
+                        let date = Date(timeIntervalSince1970: TimeInterval(timeInterval))
+                        let dateString = self.dateFormatter.string(from: date)
+                        self.refreshControl?.attributedTitle = NSAttributedString(string: dateString)
+                    }
+                }
             }
         }
     }
