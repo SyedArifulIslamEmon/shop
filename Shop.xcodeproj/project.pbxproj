@@ -13,6 +13,28 @@
 		543AE90A1E9E527E000736D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 543AE9081E9E527E000736D5 /* LaunchScreen.storyboard */; };
 		543AE9151E9E527E000736D5 /* ShopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543AE9141E9E527E000736D5 /* ShopTests.swift */; };
 		543AE9201E9E527E000736D5 /* ShopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543AE91F1E9E527E000736D5 /* ShopUITests.swift */; };
+		5469EB5A1E9FDEED00E13402 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469EB591E9FDEED00E13402 /* CartViewController.swift */; };
+		5469EB5C1E9FE73A00E13402 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5469EB5B1E9FE73A00E13402 /* Cart.swift */; };
+		54AD5F451EA09E83008B6643 /* CountedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F441EA09E83008B6643 /* CountedSet.swift */; };
+		54AD5F471EA3FA73008B6643 /* ExchangeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F461EA3FA73008B6643 /* ExchangeTableViewController.swift */; };
+		54AD5F4A1EA3FC13008B6643 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F491EA3FC13008B6643 /* DataService.swift */; };
+		54AD5F4C1EA3FE79008B6643 /* ExchangeRates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F4B1EA3FE79008B6643 /* ExchangeRates.swift */; };
+		54AD5F4E1EA3FE9A008B6643 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F4D1EA3FE9A008B6643 /* Constants.swift */; };
+		54AD5F501EA3FF9E008B6643 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F4F1EA3FF9E008B6643 /* ExchangeRate.swift */; };
+		54AD5F521EA3FFF4008B6643 /* ExchangeRatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F511EA3FFF4008B6643 /* ExchangeRatesService.swift */; };
+		54AD5F561EA40328008B6643 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AD5F551EA40328008B6643 /* JSONParser.swift */; };
+		54C381471E9E5AF400C2512F /* ShopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381461E9E5AF400C2512F /* ShopTableViewController.swift */; };
+		54C3814A1E9E5C2000C2512F /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */; };
+		54C3814C1E9E608500C2512F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814B1E9E608500C2512F /* Product.swift */; };
+		54C3814E1E9E60C400C2512F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814D1E9E60C400C2512F /* Currency.swift */; };
+		54C381501E9E612300C2512F /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814F1E9E612300C2512F /* Price.swift */; };
+		54C381521E9E670800C2512F /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381511E9E670800C2512F /* Unit.swift */; };
+		54C381541E9E687C00C2512F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381531E9E687C00C2512F /* Colors.swift */; };
+		54C381561E9E73B200C2512F /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381551E9E73B200C2512F /* ProductDetailViewController.swift */; };
+		54E0D1841EA615730092BF11 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814B1E9E608500C2512F /* Product.swift */; };
+		54E0D18A1EA626410092BF11 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814F1E9E612300C2512F /* Price.swift */; };
+		54E0D18B1EA626410092BF11 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381511E9E670800C2512F /* Unit.swift */; };
+		54E0D18C1EA626450092BF11 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814D1E9E60C400C2512F /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +67,24 @@
 		543AE91B1E9E527E000736D5 /* ShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		543AE91F1E9E527E000736D5 /* ShopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopUITests.swift; sourceTree = "<group>"; };
 		543AE9211E9E527E000736D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5469EB591E9FDEED00E13402 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		5469EB5B1E9FE73A00E13402 /* Cart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		54AD5F441EA09E83008B6643 /* CountedSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountedSet.swift; sourceTree = "<group>"; };
+		54AD5F461EA3FA73008B6643 /* ExchangeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeTableViewController.swift; sourceTree = "<group>"; };
+		54AD5F491EA3FC13008B6643 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		54AD5F4B1EA3FE79008B6643 /* ExchangeRates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRates.swift; sourceTree = "<group>"; };
+		54AD5F4D1EA3FE9A008B6643 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		54AD5F4F1EA3FF9E008B6643 /* ExchangeRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
+		54AD5F511EA3FFF4008B6643 /* ExchangeRatesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeRatesService.swift; sourceTree = "<group>"; };
+		54AD5F551EA40328008B6643 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		54C381461E9E5AF400C2512F /* ShopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopTableViewController.swift; sourceTree = "<group>"; };
+		54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		54C3814B1E9E608500C2512F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		54C3814D1E9E60C400C2512F /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		54C3814F1E9E612300C2512F /* Price.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Price.swift; sourceTree = "<group>"; };
+		54C381511E9E670800C2512F /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		54C381531E9E687C00C2512F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		54C381551E9E73B200C2512F /* ProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +135,16 @@
 		543AE8FE1E9E527E000736D5 /* Shop */ = {
 			isa = PBXGroup;
 			children = (
-				54C381451E9E5A3600C2512F /* utilities */,
+				54AD5F481EA3FBFD008B6643 /* network */,
 				54C381441E9E5A2B00C2512F /* model */,
 				54C381431E9E5A2300C2512F /* view controllers */,
+				54C381451E9E5A3600C2512F /* utilities */,
 				543AE8FF1E9E527E000736D5 /* AppDelegate.swift */,
 				543AE9031E9E527E000736D5 /* Main.storyboard */,
 				543AE9061E9E527E000736D5 /* Assets.xcassets */,
 				543AE9081E9E527E000736D5 /* LaunchScreen.storyboard */,
 				543AE90B1E9E527E000736D5 /* Info.plist */,
+				54AD5F4D1EA3FE9A008B6643 /* Constants.swift */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -125,9 +167,24 @@
 			path = ShopUITests;
 			sourceTree = "<group>";
 		};
+		54AD5F481EA3FBFD008B6643 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				54AD5F491EA3FC13008B6643 /* DataService.swift */,
+				54AD5F511EA3FFF4008B6643 /* ExchangeRatesService.swift */,
+				54AD5F551EA40328008B6643 /* JSONParser.swift */,
+			);
+			name = network;
+			sourceTree = "<group>";
+		};
 		54C381431E9E5A2300C2512F /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				54C381461E9E5AF400C2512F /* ShopTableViewController.swift */,
+				54C381491E9E5C2000C2512F /* ProductTableViewCell.swift */,
+				54C381551E9E73B200C2512F /* ProductDetailViewController.swift */,
+				5469EB591E9FDEED00E13402 /* CartViewController.swift */,
+				54AD5F461EA3FA73008B6643 /* ExchangeTableViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -135,6 +192,12 @@
 		54C381441E9E5A2B00C2512F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				54AD5F4B1EA3FE79008B6643 /* ExchangeRates.swift */,
+				54AD5F4F1EA3FF9E008B6643 /* ExchangeRate.swift */,
+				54C3814B1E9E608500C2512F /* Product.swift */,
+				54C3814D1E9E60C400C2512F /* Currency.swift */,
+				54C3814F1E9E612300C2512F /* Price.swift */,
+				54C381511E9E670800C2512F /* Unit.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -142,6 +205,9 @@
 		54C381451E9E5A3600C2512F /* utilities */ = {
 			isa = PBXGroup;
 			children = (
+				5469EB5B1E9FE73A00E13402 /* Cart.swift */,
+				54AD5F441EA09E83008B6643 /* CountedSet.swift */,
+				54C381531E9E687C00C2512F /* Colors.swift */,
 			);
 			name = utilities;
 			sourceTree = "<group>";
@@ -280,7 +346,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54AD5F561EA40328008B6643 /* JSONParser.swift in Sources */,
 				543AE9001E9E527E000736D5 /* AppDelegate.swift in Sources */,
+				54AD5F4A1EA3FC13008B6643 /* DataService.swift in Sources */,
+				54AD5F451EA09E83008B6643 /* CountedSet.swift in Sources */,
+				54C381541E9E687C00C2512F /* Colors.swift in Sources */,
+				54AD5F521EA3FFF4008B6643 /* ExchangeRatesService.swift in Sources */,
+				5469EB5A1E9FDEED00E13402 /* CartViewController.swift in Sources */,
+				54C381561E9E73B200C2512F /* ProductDetailViewController.swift in Sources */,
+				54AD5F501EA3FF9E008B6643 /* ExchangeRate.swift in Sources */,
+				5469EB5C1E9FE73A00E13402 /* Cart.swift in Sources */,
+				54AD5F4E1EA3FE9A008B6643 /* Constants.swift in Sources */,
+				54C3814E1E9E60C400C2512F /* Currency.swift in Sources */,
+				54C3814C1E9E608500C2512F /* Product.swift in Sources */,
+				54C381521E9E670800C2512F /* Unit.swift in Sources */,
+				54AD5F471EA3FA73008B6643 /* ExchangeTableViewController.swift in Sources */,
+				54C381471E9E5AF400C2512F /* ShopTableViewController.swift in Sources */,
+				54C3814A1E9E5C2000C2512F /* ProductTableViewCell.swift in Sources */,
+				54AD5F4C1EA3FE79008B6643 /* ExchangeRates.swift in Sources */,
+				54C381501E9E612300C2512F /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +381,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				543AE9201E9E527E000736D5 /* ShopUITests.swift in Sources */,
+				54E0D18C1EA626450092BF11 /* Currency.swift in Sources */,
+				54E0D18B1EA626410092BF11 /* Unit.swift in Sources */,
+				54E0D1841EA615730092BF11 /* Product.swift in Sources */,
+				54E0D18A1EA626410092BF11 /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
