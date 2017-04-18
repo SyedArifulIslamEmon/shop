@@ -1,6 +1,7 @@
 # shop
 Shop iOS Xcode project
 
+You have to add your API key in Constants.swift in order to receive exchange rates.
 
 Possible improvements:
 - caching of exchange rates response
