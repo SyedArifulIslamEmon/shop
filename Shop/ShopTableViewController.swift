@@ -23,8 +23,6 @@ class ShopTableViewController: UITableViewController, ProductDetailDelegate {
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        cart.add(products[0])
     }
     
     override func viewWillAppear(_ animated: Bool) {

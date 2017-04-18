@@ -31,6 +31,10 @@
 		54C381521E9E670800C2512F /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381511E9E670800C2512F /* Unit.swift */; };
 		54C381541E9E687C00C2512F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381531E9E687C00C2512F /* Colors.swift */; };
 		54C381561E9E73B200C2512F /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381551E9E73B200C2512F /* ProductDetailViewController.swift */; };
+		54E0D1841EA615730092BF11 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814B1E9E608500C2512F /* Product.swift */; };
+		54E0D18A1EA626410092BF11 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814F1E9E612300C2512F /* Price.swift */; };
+		54E0D18B1EA626410092BF11 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C381511E9E670800C2512F /* Unit.swift */; };
+		54E0D18C1EA626450092BF11 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C3814D1E9E60C400C2512F /* Currency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -377,6 +381,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				543AE9201E9E527E000736D5 /* ShopUITests.swift in Sources */,
+				54E0D18C1EA626450092BF11 /* Currency.swift in Sources */,
+				54E0D18B1EA626410092BF11 /* Unit.swift in Sources */,
+				54E0D1841EA615730092BF11 /* Product.swift in Sources */,
+				54E0D18A1EA626410092BF11 /* Price.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
